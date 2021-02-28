@@ -6,10 +6,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
+
+  <script src="js/all.min.js"></script>
   <title>404 Not Found</title>
 </head>
 
-<body>
+<body id="body">
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar__links">
+      <a href="#" class="link">Home</a>
+      <a href="#" class="link">Services</a>
+      <a href="#" class="link">About Us</a>
+      <a href="#" class="link">Contact</a>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header class="header">
     <nav class="header__nav">
       <div class="header__logo">404 Not Found</div>
@@ -19,10 +32,12 @@
         <a href="#" class="link">About Us</a>
         <a href="#" class="contact">Contact</a>
       </div>
+      <a href="javascript:void(0);" class="icon" onclick="toggleSidebar()"><i class="fas fa-bars"></i></a>
     </nav>
   </header>
 
-  <main class="main">
+  <!-- Main -->
+  <main id="main" class="main">
     <div class="container">
       <div class="img-box">
         <img src="img/img.png" class="img" alt="">
@@ -40,11 +55,12 @@
       </div>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <span class="footer__name">@Sebastian Avila</span>
   </footer>
 
-
+  <!-- Scripts -->
   <script src="js/main.js"></script>
 </body>
 

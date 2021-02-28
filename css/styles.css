@@ -6,6 +6,49 @@
   box-sizing: border-box;
 }
 
+body {
+  transition: .5s;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  z-index: 1;
+  width: 0px;
+  height: 100%;
+  top: 0;
+  right: -30px;
+  overflow-x: hidden;
+  padding: 30px 15px;
+  background-color: rgb(143, 66, 214);
+  font-family: 'Nunito', sans-serif;
+  transition: .5s;
+}
+
+.sidebar__links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+.sidebar__links .link {
+  text-decoration: none;
+  color: #fff;
+  padding: 15px 10px;
+  font-size: 1.8em;
+}
+
+.sidebar__links .link:hover {
+  color: rgb(143, 66, 214);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.main {
+  transition: .5s;
+  padding: 20px;
+}
+
 /* Header */
 .header {
   width: 100%;
@@ -13,12 +56,15 @@
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
   border-bottom: 2px solid blueviolet;
+  justify-content: center;
 }
 
 .header__nav {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  max-width: 1400px;
+  margin: 0 auto;
   height: 100%;
   padding: 0 50px;
   justify-content: space-between;
@@ -34,13 +80,17 @@
 
 .header__links {
   align-self: center;
-  margin-right: 30px;
 }
 
 .header__links .link {
   text-decoration: none;
   color: #000;
   margin-left: 10px;
+  transition: .3s;
+}
+
+.header__links > a:hover {
+  color: blueviolet;
   transition: .3s;
 }
 
@@ -51,6 +101,7 @@
   border-radius: 10px;
   margin: 0 10px;
   text-decoration: none;
+  transition: .2s;
 }
 
 .contact:hover {
@@ -58,11 +109,18 @@
   background-color: #fff;
   padding: 5px 15px;
   border: 1px solid blueviolet;
+  transition: .2s;
 }
 
-.header__links > a:hover {
+.icon {
+  display: none;
+  padding: 5px 10px;
+  font-size: 1.3em;
+  text-decoration: none;
   color: blueviolet;
-  transition: .3s;
+  background-color: rgb(246, 235, 255);
+  border-radius: 10px;
+  align-self: center;
 }
 
 /* Main Section */
@@ -74,6 +132,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  max-width: 1050px;
   margin: 0 auto;
   width: 75%;
   height: 600px;
@@ -158,4 +217,38 @@
   font-size: 1.2em;
   font-style: italic;
   color: rgb(177, 177, 177);
+}
+
+@media screen and (max-width: 576px) {
+  .main{
+    margin-bottom: 40px;
+  }
+
+  .header__links {
+    display: none;
+  }
+
+  .icon {
+    display: block;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .texts {
+    padding: 0;
+  }
+
+  .texts__title {
+    font-size: 1.5em;
+  }
+
+  .texts__body .paragraph {
+    font-size: 1.3em;
+  }
+
+  .texts__button .btn {
+    padding: 15px 40px;
+  }
 }
